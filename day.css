@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  #currentDate {
+    font-size: 1.2rem;
+    color: #666;
+    font-style: italic;
+  }
+  
+  main#planner {
+    background: white;
+    width: 100%;
+    max-width: 700px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+  
+  .time-block {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1.2rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .time-block:last-child {
+    border-bottom: none;
+  }
+  
+  .hour {
+    width: 80px;
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+    user-select: none;
+    padding-right: 1rem;
+    border-right: 1px solid #ddd;
+  }
+  
+  .task {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    resize: vertical;
+    min-height: 50px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .task:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .save-btn {
+    width: 50px;
+    height: 50px;
+    margin-left: 1rem;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .save-btn:hover,
+  .save-btn:focus {
+    background-color: #0056b3;
+    outline: none;
+  }
+  
+  .past {
+    background-color: #e0e0e0;
+  }
+  
+  .present {
+    background-color: #ffcccc;
+  }
+  
+  .future {
+    background-color: #ccf2ff;
+  }
+  
+  footer {
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 700px;
+    text-align: right;
+  }
+  
+  #clearBtn {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #clearBtn:hover,
+  #clearBtn:focus {
+    background-color: #a71d2a;
+    outline: none;
+  }
+  
+  @media (max-width: 600px) {
+    .time-block {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .hour {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+  
+    .save-btn {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 0.5rem;
+    }
+  }
+  
