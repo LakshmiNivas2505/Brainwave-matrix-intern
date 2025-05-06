@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>E-commerce Store</title>
+  <link rel="stylesheet" href="ecom.css" />
+</head>
+<body>
+  <header>
+    <h1>ShopMaster</h1>
+    <div class="header-controls">
+      <input type="search" id="search-input" placeholder="Search products..." />
+      <select id="category-select">
+        <option value="all">All Categories</option>
+      </select>
+      <select id="sort-select" title="Sort products">
+        <option value="default">Sort By</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+        <option value="name-asc">Name: A to Z</option>
+        <option value="name-desc">Name: Z to A</option>
+      </select>
+      <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button id="cart-button" aria-label="View cart">
+        Cart (<span id="cart-count">0</span>)
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="products" class="products"></section>
+  </main>
+
+  <div id="product-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="product-modal-title">
+    <div class="modal-content">
+      <button id="close-product-modal" class="close" aria-label="Close product details">&times;</button>
+      <img id="modal-product-image" alt="" />
+      <h2 id="product-modal-title"></h2>
+      <p id="modal-product-description"></p>
+      <p class="modal-price" id="modal-product-price"></p>
+      <div class="modal-quantity">
+        <label for="modal-quantity-input">Quantity:</label>
+        <input type="number" id="modal-quantity-input" min="1" value="1" />
+      </div>
+      <button id="modal-add-to-cart-btn" class="add-to-cart-btn">Add to Cart</button>
+    </div>
+  </div>
+
+  <div id="cart-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="cart-modal-title">
+    <div class="modal-content cart-modal-content">
+      <button id="close-cart" class="close" aria-label="Close cart">&times;</button>
+      <h2 id="cart-modal-title">Your Cart</h2>
+      <ul id="cart-items"></ul>
+      <div class="cart-total">
+        Total: $<span id="cart-total">0.00</span>
+      </div>
+      <button id="checkout-button" class="checkout-btn">Checkout</button>
+    </div>
+  </div>
+
+  <div id="notification" class="notification hidden" role="alert" aria-live="assertive"></div>
+
+  <script src="ecomer.js"></script>
+</body>
+</html>
